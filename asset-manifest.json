@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/alexander-kovalev2110/merehead-proj/static/css/main.f4d6f893.chunk.css",
-    "main.js": "/alexander-kovalev2110/merehead-proj/static/js/main.07ee3eeb.chunk.js",
-    "main.js.map": "/alexander-kovalev2110/merehead-proj/static/js/main.07ee3eeb.chunk.js.map",
-    "runtime-main.js": "/alexander-kovalev2110/merehead-proj/static/js/runtime-main.3b08145a.js",
-    "runtime-main.js.map": "/alexander-kovalev2110/merehead-proj/static/js/runtime-main.3b08145a.js.map",
-    "static/js/2.904cfc97.chunk.js": "/alexander-kovalev2110/merehead-proj/static/js/2.904cfc97.chunk.js",
-    "static/js/2.904cfc97.chunk.js.map": "/alexander-kovalev2110/merehead-proj/static/js/2.904cfc97.chunk.js.map",
-    "index.html": "/alexander-kovalev2110/merehead-proj/index.html",
-    "precache-manifest.a362e0a959c4e1bab0da11f6efcee49a.js": "/alexander-kovalev2110/merehead-proj/precache-manifest.a362e0a959c4e1bab0da11f6efcee49a.js",
-    "service-worker.js": "/alexander-kovalev2110/merehead-proj/service-worker.js",
-    "static/css/main.f4d6f893.chunk.css.map": "/alexander-kovalev2110/merehead-proj/static/css/main.f4d6f893.chunk.css.map",
-    "static/js/2.904cfc97.chunk.js.LICENSE.txt": "/alexander-kovalev2110/merehead-proj/static/js/2.904cfc97.chunk.js.LICENSE.txt"
+    "main.css": "/merehead-proj/static/css/main.f4d6f893.chunk.css",
+    "main.js": "/merehead-proj/static/js/main.07ee3eeb.chunk.js",
+    "main.js.map": "/merehead-proj/static/js/main.07ee3eeb.chunk.js.map",
+    "runtime-main.js": "/merehead-proj/static/js/runtime-main.da3c7038.js",
+    "runtime-main.js.map": "/merehead-proj/static/js/runtime-main.da3c7038.js.map",
+    "static/js/2.904cfc97.chunk.js": "/merehead-proj/static/js/2.904cfc97.chunk.js",
+    "static/js/2.904cfc97.chunk.js.map": "/merehead-proj/static/js/2.904cfc97.chunk.js.map",
+    "index.html": "/merehead-proj/index.html",
+    "precache-manifest.c537d4fec75a8583220d3ce6f61b5a15.js": "/merehead-proj/precache-manifest.c537d4fec75a8583220d3ce6f61b5a15.js",
+    "service-worker.js": "/merehead-proj/service-worker.js",
+    "static/css/main.f4d6f893.chunk.css.map": "/merehead-proj/static/css/main.f4d6f893.chunk.css.map",
+    "static/js/2.904cfc97.chunk.js.LICENSE.txt": "/merehead-proj/static/js/2.904cfc97.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3b08145a.js",
+    "static/js/runtime-main.da3c7038.js",
     "static/js/2.904cfc97.chunk.js",
     "static/css/main.f4d6f893.chunk.css",
     "static/js/main.07ee3eeb.chunk.js"
