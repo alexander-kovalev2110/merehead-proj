@@ -11,27 +11,21 @@ const initialState = {
     id: '',
     name: '',
     surname: '',
-    desc: ''
+    desc: '',
+    avatar: null
 }
 
 class App extends Component {
     constructor(props) {
         super(props)
-        let  edUser = initialState
-
         this.state = {            // State initialization
             users: [],            // Array of users received from the server
-            editmode: false       // Current user edit mode - true; false - user input mode
+            user: initialState,   // Current user (input/edit)
+            editmode: false       // true - user edit mode; false - user input mode
         }
 
         this.getUsers()           // Getting users from site
-
-        this.getUsers = this.getUsers.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.editUser = this.editUser.bind(this)
-        this.removeUser = this.removeUser.bind(this)
     }
-
 
     getUsers = ()  => {                 // GET request. Getting Array of users
         fetch(url)
@@ -46,27 +40,36 @@ class App extends Component {
             })
     }
 
-    handleSubmit = form => {            // POST/PUT request. Adding/editing user
-        let url_submit = url + '?id=' + form.id +
+    handleChange = event => {       // Input/Output of a character
+        const { name, value } = event.target
+        let form = this.state.user
+        form[name] = value
+        this.setState({user: form})
+    }
+
+    handleSubmit = () => {            // POST/PUT request. Adding/editing user
+        const form = this.state.user
+        let url_sub = this.state.editmode ? url + form.id + '/' : url
+        url_sub += '?id=' + form.id +
             '&name=' + form.name +
             '&surname=' + form.surname +
             '&desc=' + form.desc +
             '&avatar=' + form.avatar
-        let submitmethod = this.state.editmode ? "PUT" : "POST"
-        fetch(url_submit, { method: submitmethod })   // POST request
+        const submitmethod = this.state.editmode ? "PUT" : "POST"
+        fetch(url_sub, { method: submitmethod })   // POST/PUT request
             .then(response => {
                 if (!response.ok) throw Error(response.statusText)
                 return response.json()
             })
             .then(data => console.log(data))
             .catch(error => console.log(error))
+
+        this.setState({ user: initialState, editmode: false })
         this.getUsers()
-        this.edUser = initialState
     }
 
     editUser = index => {               // Switch to edit mode
-        this.edUser =  this.state.users[index]
-        this.setState({editmode: true})
+        this.setState({editmode: true, user: this.state.users[index]})
     }
 
     removeUser = index => {            // DELETE request. Deleting current user
@@ -85,8 +88,8 @@ class App extends Component {
     return (
         <div className="container">
             <Table users={this.state.users} removeUser={this.removeUser} editUser={this.editUser} />
-            <Form handleSubmit={this.handleSubmit} editMode={this.state.editmode}
-                  editUser={this.edUser} />
+            <Form user={this.state.user} handleChange={this.handleChange}
+                  handleSubmit={this.handleSubmit} />
         </div>
     )
   }

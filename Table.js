@@ -40,15 +40,13 @@ const TableBody = (props) => {        // Generation of DB-table
         )
     })
 
-    // Selection users from the array to the output page
+    // Selecting users from the array to the output page
     const {offset, page} = props
-
     rows = rows.filter((el, index) => ((index >= offset) && (index < offset + page)))
-
-    return ( <tbody id="db_tab">{rows}</tbody> )
+    return ( <tbody>{rows}</tbody> )
 }
 
-const Pagination = (props) => {             // Go to the next/previous page - Buttons: "Previous"/"Next"
+const Pagination = (props) => {         // Go to the previous/next page - Buttons: "Previous"/"Next"
     const { pagePrevious, pageNext } = props
     return (
         <div className="column nest">
@@ -69,8 +67,6 @@ class Table extends Component {             // Database table displaying
             offset: 0,      // Page offset on the screen
             page: 5         // Page size
         }
-        this.pageNext = this.pageNext.bind(this)
-        this.pagePrevious = this.pagePrevious.bind(this)
     }
 
     pageNext = () => {                      // Next page
